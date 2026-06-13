@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./screens/Home";
 import About from "./screens/About";
+import Products from "./screens/Products";
+import Account from "./screens/Account";
 import AOS from "aos";
 import "aos/dist/aos.css";
  
@@ -29,6 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
       </main>
 
