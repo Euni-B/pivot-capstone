@@ -46,7 +46,7 @@ export default function Header() {
                     />
 
                     {/* Brand Name & Tagline */}
-                    <div className="flex flex-col leading-none  mt-1 hidden md:block">
+                    <div className="flex flex-col leading-none   hidden md:block">
                         <h1 className="font-heading text-4xl text-primary-green">
                             NeighborGoods
                         </h1>
