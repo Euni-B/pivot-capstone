@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className="bg-primary-dark text-light-background">
             <div className="mx-auto max-w-6xl px-6 py-8">
                 {/* Main footer grid */}
-                <div className="grid grid-cols-1 gap-2 md:grid-cols-[1.8fr_1fr_1fr_1fr]">
+                <div className="grid grid-cols-1 gap-1 md:grid-cols-[1.8fr_1fr_1fr_1fr]">
                     {/* Brand column */}
                     <div>
                         <div className="mb-4 flex items-center gap-1 md: gap-4">
@@ -15,16 +15,16 @@ export default function Footer() {
                             <img
                                 src={logo}
                                 alt="NeighborGoods icon"
-                                className="h-24 w-24 object-contain"
+                                className="h-18 w-18 object-contain"
                             />
 
                             {/* Text Stack */}
                             <div className="flex flex-col">
-                                <h2 className="font-heading text-4xl leading-none text-accent-gold">
+                                <h2 className="font-heading leading-none text-accent-gold text-2xl md:text-4xl ">
                                     NeighborGoods
                                 </h2>
 
-                                <p className="mt-1 font-body text-base text-light-background/80">
+                                <p className="mt-1 font-body  text-light-background/80 text-base">
                                     Local goods. Real neighbors.
                                 </p>
                             </div>
