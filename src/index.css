@@ -1,1 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #1F2937;
+  --color-primary-green: #2E6F57;
+  --color-accent-gold: #D6A86A;
+  --color-light-background: #F7F8FA;
+
+  --font-heading: "DM Serif Display", serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #F7F8FA;
+  color: #1F2937;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
