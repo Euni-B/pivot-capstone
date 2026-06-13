@@ -20,7 +20,7 @@ export default function Footer() {
 
                             {/* Text Stack */}
                             <div className="flex flex-col">
-                                <h2 className="font-heading text-3xl leading-none text-accent-gold">
+                                <h2 className="font-heading text-4xl leading-none text-accent-gold">
                                     NeighborGoods
                                 </h2>
 
@@ -33,7 +33,7 @@ export default function Footer() {
 
                     {/* Explore links */}
                     <div>
-                        <h3 className="mb-4 font-body text-sm font-semibold uppercase tracking-widest text-accent-gold">
+                        <h3 className="mb-4 font-body text-base font-semibold uppercase tracking-widest text-accent-gold">
                             Explore
                         </h3>
 
@@ -58,7 +58,7 @@ export default function Footer() {
 
                     {/* Account links */}
                     <div>
-                        <h3 className="mb-4 font-body text-sm font-semibold uppercase tracking-widest text-accent-gold">
+                        <h3 className="mb-4 font-body text-base font-semibold uppercase tracking-widest text-accent-gold">
                             Account
                         </h3>
 
@@ -75,7 +75,7 @@ export default function Footer() {
 
                     {/* Contact links */}
                     <div>
-                        <h3 className="mb-4 font-body text-sm font-semibold uppercase tracking-widest text-accent-gold">
+                        <h3 className="mb-4 font-body text-base font-semibold uppercase tracking-widest text-accent-gold">
                             Contact
                         </h3>
 
@@ -92,7 +92,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom bar */}
-                <div className="mt-6 border-t border-white/10 pt-4 text-center font-body text-sm text-light-background/70">
+                <div className="mt-6 border-t border-white/10 pt-4 text-center font-body text-base text-light-background/70">
                     © 2026 NeighborGoods. All rights reserved.
                 </div>
             </div>

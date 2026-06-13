@@ -42,12 +42,12 @@ export default function Header() {
                     <img
                         src={logo}
                         alt="NeighborGoods logo"
-                        className="h-20 w-20 object-contain"
+                        className="h-26 w-26 object-contain"
                     />
 
                     {/* Brand Name & Tagline */}
                     <div className="flex flex-col leading-none">
-                        <h1 className="font-heading text-2xl text-primary-green">
+                        <h1 className="font-heading text-4xl text-primary-green">
                             NeighborGoods
                         </h1>
 
@@ -55,7 +55,7 @@ export default function Header() {
                             className="
               mt-1 hidden
               font-body
-              text-[10px]
+              text-base
               tracking-[0.22em]
               text-primary-dark
               md:block
@@ -67,7 +67,7 @@ export default function Header() {
                 </NavLink>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-8 font-body text-sm font-medium">
+                <nav className="hidden md:flex items-center gap-8 font-body text-base font-medium">
                     {links.map((link) => (
                         <NavLink
                             key={link.name}
