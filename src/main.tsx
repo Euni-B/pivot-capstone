@@ -6,10 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 
 
 
-
+// tells where and what to render 
 createRoot(document.getElementById('root')!).render(
+  // helps find mistakes in code 
   <StrictMode>
-    <BrowserRouter>   
+    {/* navigates amongst different pages  */}
+    <BrowserRouter>
+    {/* component that contains everything to render       */}
       <App />
     </BrowserRouter>
   </StrictMode>,

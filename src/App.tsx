@@ -9,6 +9,7 @@ import "aos/dist/aos.css";
 
 
 function App() {
+  // scroll animation library initialization
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,7 +23,7 @@ function App() {
       {/* Global Header */}
       <Header />
 
-      {/* Page Content */}
+      {/* Screens to show based on url/route*/}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
