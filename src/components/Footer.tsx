@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.8fr_1fr_1fr_1fr]">
                     {/* Brand column */}
                     <div>
-                        <div className="mb-4 flex items-center gap-4">
+                        <div className="mb-4 flex items-center gap-1 md: gap-4">
                             {/* Larger Logo */}
                             <img
                                 src={logo}
