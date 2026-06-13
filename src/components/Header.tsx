@@ -46,8 +46,8 @@ export default function Header() {
                     />
 
                     {/* Brand Name & Tagline */}
-                    <div className="flex flex-col leading-none">
-                        <h1 className="font-heading text-4xl text-primary-green md:block">
+                    <div className="flex flex-col leading-none md:block">
+                        <h1 className="font-heading text-4xl text-primary-green">
                             NeighborGoods
                         </h1>
 
@@ -58,7 +58,7 @@ export default function Header() {
               text-base
               tracking-[0.22em]
               text-primary-dark
-              md:block
+              
             "
                         >
                             LOCAL GOODS. REAL NEIGHBORS.
