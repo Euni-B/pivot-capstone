@@ -1,0 +1,45 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Fresh Strawberries",
+      "price": 5.99,
+      "seller": "Sunny Acres Farm",
+      "category": "Produce",
+      "image": "placeholder.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Handmade Soy Candle",
+      "price": 14.99,
+      "seller": "Bayou Crafts",
+      "category": "Handmade",
+      "image": "placeholder.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Local Honey",
+      "price": 8.99,
+      "seller": "Honey Creek Apiary",
+      "category": "Food",
+      "image": "placeholder.jpg"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": 1,
+      "customer": "Sarah M.",
+      "rating": 5,
+      "review": "I found fresh produce and handmade goods from sellers right in my community."
+    },
+    {
+      "id": 2,
+      "customer": "James R.",
+      "rating": 5,
+      "review": "NeighborGoods made it easy to support local businesses."
+    }
+  ],
+
+  "users": []
+}
