@@ -1,0 +1,50 @@
+export const products = [
+  {
+    id: 1,
+    name: "Fresh Strawberries",
+    price: 5.99,
+    seller: "Sunny Acres Farm",
+    category: "Produce",
+    image: "",
+  },
+  {
+    id: 2,
+    name: "Local Honey",
+    price: 8.99,
+    seller: "Honey Creek Apiary",
+    category: "Honey",
+    image: "",
+  },
+  {
+    id: 3,
+    name: "Handmade Soy Candle",
+    price: 14.99,
+    seller: "Bayou Crafts",
+    category: "Handmade",
+    image: "",
+  },
+  {
+    id: 4,
+    name: "Blueberry Jam",
+    price: 6.99,
+    seller: "Country Kitchen",
+    category: "Jams",
+    image: "",
+  },
+  {
+    id: 5,
+    name: "Fresh Tomatoes",
+    price: 3.49,
+    seller: "Sunny Acres Farm",
+    category: "Produce",
+    image: "",
+  },
+  {
+    id: 6,
+    name: "Handcrafted Cutting Board",
+    price: 39.99,
+    seller: "Louisiana Woodworks",
+    category: "Woodworking",
+    image: "",
+  }
+];

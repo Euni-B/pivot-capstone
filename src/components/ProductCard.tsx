@@ -8,7 +8,7 @@ interface Product {
   image: string;
 }
 
-// This describes what ProductCard needs to receive
+// This describes what this component receives
 interface ProductCardProps {
   product: Product;
 }
@@ -28,19 +28,19 @@ function ProductCard({ product }: ProductCardProps) {
         {product.name}
       </h2>
 
-      {/* Seller name */}
+      {/* Seller */}
       <p className="mt-2 font-body text-base text-primary-dark/70">
         Seller: {product.seller}
       </p>
 
-      {/* Product category */}
+      {/* Category */}
       <p className="font-body text-base text-primary-dark/70">
         Category: {product.category}
       </p>
 
-      {/* Product price */}
+      {/* Price */}
       <p className="mt-3 font-body text-lg font-bold text-primary-green">
-        ${product.price}
+        ${product.price.toFixed(2)}
       </p>
     </div>
   );
