@@ -49,7 +49,7 @@ export const products = [
     price: 3.49,
     seller: "Sunny Acres Farm",
     category: "Produce",
-    image: "",
+    image: " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8vPDzNPninBVzqYCjKCOkRmjO7HnoPavVyg&s",
     rating: 4.6,
     reviewCount: 10,
     description: "Fresh tomatoes grown by a local farm and ready for pickup.",

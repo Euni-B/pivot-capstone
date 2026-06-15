@@ -25,9 +25,17 @@ function ProductCard({ product }: ProductCardProps) {
         >
             {/* Product image placeholder */}
             <div className="flex h-40 items-center justify-center rounded-2xl bg-primary-green/10">
-                <p className="font-body text-base text-primary-dark/60">
-                    Image Coming Soon
-                </p>
+                {product.image ? (
+                    <img
+                        src={product.image}
+                        alt={product.name}
+                        className="h-full w-full object-cover"
+                    />
+                ) : (
+                    <p className="font-body text-base text-primary-dark/60">
+                        Image Coming Soon
+                    </p>
+                )}
             </div>
 
             {/* Category */}
