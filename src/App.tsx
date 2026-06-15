@@ -8,9 +8,12 @@ import Products from "./screens/Products";
 import Account from "./screens/Account";
 import ProductDetails from "./screens/ProductDetails";
 import Contact from "./screens/Contact";
+import BuyerAccount from "./screens/CustomerAccount";
+import VendorAccount from "./screens/VendorAccount";
 import AOS from "aos";
 import "aos/dist/aos.css";
- 
+
+
 
 
 function App() {
@@ -23,24 +26,28 @@ function App() {
   }, []);
 
   return (
- 
-     <div className="flex min-h-screen flex-col">
+
+    <div className="flex min-h-screen flex-col">
       {/* Global Header */}
       <Header />
 
       {/* Screens to show based on url/route*/}
       <main className="flex-grow">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/account/customer" element={<BuyerAccount />} />
+          <Route path="/account/vendor" element={<VendorAccount />} />
+
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/contact" element={<Contact />} />
+
+        </Routes>
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }

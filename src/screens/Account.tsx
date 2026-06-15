@@ -4,8 +4,70 @@ import { Link } from "react-router-dom";
 
 function Account() {
   return (
+
     <main className="bg-light-background text-primary-dark">
-      <section className="mx-auto max-w-6xl px-6 py-16">
+
+      {/* Login Section */}
+      < section className="mx-auto mb-16 max-w-md" >
+
+        <h2 className="mb-6 text-center font-heading text-4xl text-primary-green">
+          Login
+        </h2>
+
+        <form className="flex flex-col gap-4">
+
+          {/* Email */}
+          <input
+            type="email"
+            placeholder="Email"
+            className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+          />
+
+          {/* Password */}
+          <input
+            type="password"
+            placeholder="Password"
+            className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+          />
+
+          {/* Login Button */}
+          <button
+            type="submit"
+            className="rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background"
+          >
+            Login
+          </button>
+
+        </form>
+
+        {/* Register Link */}
+        <p className="mt-6 text-center font-body">
+          New to NeighborGoods?{" "}
+          <button
+            type="button"
+            onClick={() => {
+              document
+                .getElementById("account-selection")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="font-semibold text-accent-gold hover:underline"
+          >
+            Register here
+          </button>
+        </p>
+
+      </section >
+
+
+
+
+
+      <section
+       id="account-selection"
+       className="mx-auto  max-w-6xl px-6 py-16"
+       >
+
+
 
         {/* Page heading */}
         <div className="text-center">
