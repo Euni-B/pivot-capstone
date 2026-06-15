@@ -6,6 +6,9 @@ export const products = [
     seller: "Sunny Acres Farm",
     category: "Produce",
     image: "",
+    rating: 4.9,
+    reviewCount: 18,
+    description: "Sweet local strawberries picked fresh for nearby shoppers.",
   },
   {
     id: 2,
@@ -14,6 +17,9 @@ export const products = [
     seller: "Honey Creek Apiary",
     category: "Honey",
     image: "",
+    rating: 4.8,
+    reviewCount: 24,
+    description: "Golden local honey from a small community apiary.",
   },
   {
     id: 3,
@@ -22,6 +28,9 @@ export const products = [
     seller: "Bayou Crafts",
     category: "Handmade",
     image: "",
+    rating: 4.7,
+    reviewCount: 12,
+    description: "A handmade soy candle made for cozy homes and local gifting.",
   },
   {
     id: 4,
@@ -30,6 +39,9 @@ export const products = [
     seller: "Country Kitchen",
     category: "Jams",
     image: "",
+    rating: 4.9,
+    reviewCount: 15,
+    description: "Small-batch blueberry jam made with simple local ingredients.",
   },
   {
     id: 5,
@@ -38,6 +50,9 @@ export const products = [
     seller: "Sunny Acres Farm",
     category: "Produce",
     image: "",
+    rating: 4.6,
+    reviewCount: 10,
+    description: "Fresh tomatoes grown by a local farm and ready for pickup.",
   },
   {
     id: 6,
@@ -46,5 +61,8 @@ export const products = [
     seller: "Louisiana Woodworks",
     category: "Woodworking",
     image: "",
-  }
+    rating: 5.0,
+    reviewCount: 9,
+    description: "A handcrafted wooden cutting board made by a local maker.",
+  },
 ];

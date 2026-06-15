@@ -1,7 +1,24 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { products } from "../data/products";
+import { reviews } from "../data/reviews";
 
 function Home() {
   const navigate = useNavigate();
+  const [currentReview, setCurrentReview] = useState(0);
+  const featuredProducts = products.slice(0, 3);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentReview((previousReview) =>
+        previousReview === reviews.length - 1 ? 0 : previousReview + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+
 
   return (
     <main className="bg-light-background text-primary-dark">
@@ -30,75 +47,38 @@ function Home() {
         </div>
 
         {/* FEATURED PRODUCTS */}
-        <section className="mt-14">
-          <h2 className="text-center font-heading text-3xl text-primary-dark md:text-4xl">
-            Featured Products
-          </h2>
-
-          {/* Product row with visible scroll buttons */}
-          <div className="mt-8 flex items-center gap-4">
-            <button className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary-green text-xl text-primary-green transition hover:bg-primary-green hover:text-white">
-              ←
-            </button>
-
-            <div className="grid flex-1 gap-6 md:grid-cols-3">
-              {/* Placeholder Product Card 1 */}
-              <div className="rounded-3xl bg-white p-5 shadow-sm">
-                <div className="flex h-40 items-center justify-center rounded-2xl bg-primary-green/10">
-                  <p className="font-body text-base text-primary-dark/60">
-                    Image
-                  </p>
-                </div>
-
-                <h3 className="mt-4 font-body text-lg font-semibold">
-                  Local Product
-                </h3>
-
-                <p className="mt-1 font-body text-base text-primary-dark/70">
-                  Product placeholder
+        <div className="grid flex-1 gap-6 md:grid-cols-3">
+          {featuredProducts.map((product) => (
+            <div
+              key={product.id}
+              className="rounded-3xl bg-white p-5 shadow-sm"
+            >
+              {/* Placeholder image */}
+              <div className="flex h-40 items-center justify-center rounded-2xl bg-primary-green/10">
+                <p className="font-body text-base text-primary-dark/60">
+                  Image Coming Soon
                 </p>
               </div>
 
-              {/* Placeholder Product Card 2 */}
-              <div className="rounded-3xl bg-white p-5 shadow-sm">
-                <div className="flex h-40 items-center justify-center rounded-2xl bg-accent-gold/20">
-                  <p className="font-body text-base text-primary-dark/60">
-                    Image
-                  </p>
-                </div>
+              {/* Product name */}
+              <h3 className="mt-4 font-body text-lg font-semibold text-primary-dark">
+                {product.name}
+              </h3>
 
-                <h3 className="mt-4 font-body text-lg font-semibold">
-                  Fresh Goods
-                </h3>
+              {/* Seller */}
+              <p className="mt-1 font-body text-base text-primary-dark/70">
+                {product.seller}
+              </p>
 
-                <p className="mt-1 font-body text-base text-primary-dark/70">
-                  Product placeholder
-                </p>
-              </div>
-
-              {/* Placeholder Product Card 3 */}
-              <div className="rounded-3xl bg-white p-5 shadow-sm">
-                <div className="flex h-40 items-center justify-center rounded-2xl bg-primary-dark/10">
-                  <p className="font-body text-base text-primary-dark/60">
-                    Image
-                  </p>
-                </div>
-
-                <h3 className="mt-4 font-body text-lg font-semibold">
-                  Handmade Item
-                </h3>
-
-                <p className="mt-1 font-body text-base text-primary-dark/70">
-                  Product placeholder
-                </p>
-              </div>
+              {/* Price */}
+              <p className="mt-2 font-body text-base font-bold text-primary-green">
+                ${product.price.toFixed(2)}
+              </p>
             </div>
+          ))}
+        </div>
 
-            <button className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary-green text-xl text-primary-green transition hover:bg-primary-green hover:text-white">
-              →
-            </button>
-          </div>
-        </section>
+
 
         {/* REVIEWS + SELLER SECTION */}
         <section className="mt-16 grid gap-8 md:grid-cols-2">
@@ -109,37 +89,35 @@ function Home() {
             </h2>
 
             <p className="mt-4 font-body text-xl text-accent-gold">
-              ★★★★★
+              {"★".repeat(reviews[currentReview].rating)}
             </p>
 
             <p className="mt-4 font-body text-base leading-relaxed text-primary-dark/75">
-              “I found fresh produce and handmade goods from sellers right in my
-              community.”
+              “{reviews[currentReview].review}”
             </p>
 
             <p className="mt-4 font-body text-base font-semibold text-primary-green">
-              — Local Shopper
+              — {reviews[currentReview].customer}
             </p>
           </div>
 
-          {/* Become a Seller */}
+          {/* nBecome a Seller */}
           <div className="rounded-3xl bg-white p-8 shadow-sm">
-            <h2 className="font-heading text-3xl text-primary-dark">
-              Sell on NeighborGoods
-            </h2>
+
+             <button
+              onClick={() => navigate("/account")}
+              className="mt-6 mb-6 rounded-full bg-accent-gold px-8 py-4 font-body text-base font-semibold text-primary-dark transition hover:bg-primary-green hover:text-white"
+            >
+              Become a Seller
+            </button>
+
 
             <p className="mt-4 font-body text-base leading-relaxed text-primary-dark/75">
               Share your produce, handmade goods, and specialty items with
               customers who want to support local sellers.
             </p>
 
-            <button
-              onClick={() => navigate("/account")}
-              className="mt-6 rounded-full bg-accent-gold px-8 py-4 font-body text-base font-semibold text-primary-dark transition hover:bg-primary-green hover:text-white"
-            >
-              Become a Seller
-            </button>
-
+           
             <ul className="mt-6 space-y-2 font-body text-base text-primary-dark/75">
               <li>• Reach local customers</li>
               <li>• Build trust in your community</li>
@@ -148,9 +126,8 @@ function Home() {
             </ul>
           </div>
         </section>
-
       </section>
-    </main>
+    </main >
   );
 }
 

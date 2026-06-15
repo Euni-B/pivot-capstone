@@ -1,4 +1,3 @@
-// This describes what one product looks like
 interface Product {
   id: number;
   name: string;
@@ -6,9 +5,11 @@ interface Product {
   seller: string;
   category: string;
   image: string;
+  rating: number;
+  reviewCount: number;
+  description: string;
 }
 
-// This describes what this component receives
 interface ProductCardProps {
   product: Product;
 }
@@ -23,25 +24,40 @@ function ProductCard({ product }: ProductCardProps) {
         </p>
       </div>
 
+      {/* Category */}
+      <p className="mt-4 font-body text-sm font-semibold text-primary-green">
+        {product.category}
+      </p>
+
       {/* Product name */}
-      <h2 className="mt-4 font-body text-xl font-semibold text-primary-dark">
+      <h2 className="mt-1 font-body text-xl font-semibold text-primary-dark">
         {product.name}
       </h2>
 
+      {/* Description */}
+      <p className="mt-2 font-body text-base leading-relaxed text-primary-dark/70">
+        {product.description}
+      </p>
+
       {/* Seller */}
-      <p className="mt-2 font-body text-base text-primary-dark/70">
+      <p className="mt-3 font-body text-base text-primary-dark/70">
         Seller: {product.seller}
       </p>
 
-      {/* Category */}
-      <p className="font-body text-base text-primary-dark/70">
-        Category: {product.category}
+      {/* Rating */}
+      <p className="mt-2 font-body text-base text-accent-gold">
+        ★ {product.rating} ({product.reviewCount} reviews)
       </p>
 
       {/* Price */}
       <p className="mt-3 font-body text-lg font-bold text-primary-green">
         ${product.price.toFixed(2)}
       </p>
+
+      {/* Future details button */}
+      <button className="mt-5 w-full rounded-full border border-primary-green px-5 py-3 font-body text-base font-semibold text-primary-green transition hover:bg-primary-green hover:text-white">
+        View Details
+      </button>
     </div>
   );
 }
