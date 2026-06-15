@@ -7,6 +7,7 @@ import About from "./screens/About";
 import Products from "./screens/Products";
 import Account from "./screens/Account";
 import ProductDetails from "./screens/ProductDetails";
+import Contact from "./screens/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
  
@@ -35,6 +36,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/account" element={<Account />} />
         <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       </main>
 
