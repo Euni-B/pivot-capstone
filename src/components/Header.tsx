@@ -88,7 +88,7 @@ export default function Header() {
           ${isActive
                                     ? "text-primary-green"
                                     : "text-primary-dark"
-                                }  hover:text-primary-green` }
+                                }  hover:text-primary-green`}
                         >
                             {link.name}
                         </NavLink>
@@ -157,6 +157,23 @@ export default function Header() {
                                 {link.name}
                             </NavLink>
                         ))}
+                        <Link
+                            to="/cart"
+                            onClick={() => setIsOpen(false)}
+                            className="flex items-center gap-3 rounded-xl px-4 py-3 font-body font-semibold text-primary-dark transition hover:bg-primary-green/10 hover:text-primary-green"
+                        >
+                            <div className="relative">
+                                <FaShoppingCart className="text-xl" />
+
+                                {cartCount > 0 && (
+                                    <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded-full bg-accent-gold text-xs font-bold text-primary-dark">
+                                        {cartCount}
+                                    </span>
+                                )}
+                            </div>
+
+                            <span>Cart</span>
+                        </Link>
                     </div>
                 </div>
 
