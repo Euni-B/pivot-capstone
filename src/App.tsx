@@ -10,8 +10,12 @@ import ProductDetails from "./screens/ProductDetails";
 import Contact from "./screens/Contact";
 import BuyerAccount from "./screens/CustomerAccount";
 import VendorAccount from "./screens/VendorAccount";
+import Checkout from "./screens/Checkout";
+import Payment from "./screens/Payment";
+import Cart from "./screens/Cart";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import OrderConfirmation from './screens/OrderConfirmation';
 
 
 
@@ -40,10 +44,12 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/account/customer" element={<BuyerAccount />} />
           <Route path="/account/vendor" element={<VendorAccount />} />
-
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
-
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
         </Routes>
       </main>
 

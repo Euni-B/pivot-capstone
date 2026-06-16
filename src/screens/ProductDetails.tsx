@@ -1,9 +1,16 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { products } from "../data/products";
+import { useCart } from "../context/CartContext";
 
 function ProductDetails() {
   // Gets the product id from the URL
   const { id } = useParams();
+
+  // Lets us send the user to the cart after adding an item
+  const navigate = useNavigate();
+
+  // Gives us access to the cart function
+  const { addToCart } = useCart();
 
   // Finds the matching product
   const product = products.find((item) => item.id === Number(id));
@@ -71,7 +78,23 @@ function ProductDetails() {
             ${product.price.toFixed(2)}
           </p>
 
-          <button className="mt-8 w-full rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold text-white transition hover:bg-primary-dark">
+          <button
+            type="button"
+            onClick={() => {
+              // Adds this product to the cart
+              addToCart({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                seller: product.seller,
+                image: product.image,
+              });
+
+              // Sends user to cart page
+              navigate("/cart");
+            }}
+            className="mt-8 w-full rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold text-white transition hover:bg-primary-dark"
+          >
             Add to Cart
           </button>
         </div>
