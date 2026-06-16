@@ -32,7 +32,8 @@ function Account() {
           {/* Login Button */}
           <button
             type="submit"
-            className="rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background"
+            className="rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
+            transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
           >
             Login
           </button>
@@ -75,7 +76,8 @@ function Account() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
 
           {/* Buyer card */}
-          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md">
+          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md
+           transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
             <h2 className="font-heading text-3xl text-primary-dark">
               Shop Local
             </h2>
@@ -88,14 +90,16 @@ function Account() {
             <Link
               to="/account/customer"
               className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body
-               font-semibold text-light-background transition-transform duration-300 hover:scale-105"
+               font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                hover:bg-primary-dark"
             >
               Create Customer Account
             </Link>
           </section>
 
           {/* Vendor card */}
-          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md">
+          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md
+           transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
             <h2 className="font-heading text-3xl text-primary-dark">
               Sell Local
             </h2>
@@ -108,7 +112,8 @@ function Account() {
             <Link
               to="/account/vendor"
               className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body font-semibold 
-              text-light-background transition-transform duration-300 hover:scale-105"
+              text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+               hover:bg-primary-dark"
             >
               Become a Vendor
             </Link>

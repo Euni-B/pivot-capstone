@@ -25,7 +25,9 @@ function ProductDetails() {
 
         <Link
           to="/products"
-          className="mt-6 inline-block rounded-full bg-primary-green px-6 py-3 font-body text-primary-dark font-semibold text-white"
+          className="mt-6 inline-block rounded-full bg-primary-green px-6 py-3 font-body text-primary-dark
+           font-semibold text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+            hover:bg-primary-dark"
         >
           Back to Marketplace
         </Link>
@@ -38,15 +40,18 @@ function ProductDetails() {
       {/* Back Link */}
       <Link
         to="/products"
-        className="font-body text-base font-semibold text-primary-dark transition hover:text-primary-green"
+        className="font-body text-base font-semibold text-primary-dark 
+        transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] hover:text-primary-green"
       >
         ← Back to Marketplace
       </Link>
 
       {/* Product Detail Layout */}
-      <section className="mt-8 grid gap-8 md:grid-cols-2">
+      <section className="mt-8 grid gap-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md
+       md:grid-cols-2">
         {/* Product Image Placeholder */}
-        <div className="h-80 overflow-hidden rounded-3xl bg-primary-green/10 md:h-[520px]">
+        <div className="h-80 overflow-hidden rounded-3xl bg-primary-green/10 md:h-[520px]
+        transition-transform duration-500 ease-out hover:scale-105">
           {product.image ? (
             <img
               src={product.image}
@@ -88,6 +93,7 @@ function ProductDetails() {
 
         <button
           type="button"
+         
           onClick={() => {
             // Adds this product to the cart
             addToCart({
@@ -101,7 +107,9 @@ function ProductDetails() {
             // Sends user to cart page
             navigate("/cart");
           }}
-          className="mt-8 w-full rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold text-white transition hover:bg-primary-dark"
+          className="mt-8 w-full rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold
+           text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+            hover:bg-primary-dark"
         >
           Add to Cart
         </button>

@@ -43,7 +43,9 @@ function Home() {
         <div className="my-8 flex justify-center">
           <button
             onClick={() => navigate("/products")}
-            className="rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold text-white transition hover:bg-primary-dark">
+            className="rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold 
+            text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+             hover:bg-primary-dark">
             Browse Marketplace
           </button>
         </div>
@@ -54,10 +56,12 @@ function Home() {
             <Link
               key={product.id}
               to={`/products/${product.id}`}
-              className="rounded-3xl bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="rounded-3xl bg-white p-5 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1
+               hover:shadow-md "
             >
-              {/* Placeholder image */}
-              <div className="flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-primary-green/10">
+              {/* Product image */}
+              <div className="flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-primary-green/10
+              transition-transform duration-500 ease-out hover:scale-105">
                 {product.image ? (
                   <img
                     src={product.image}
@@ -121,12 +125,14 @@ function Home() {
               </p>
             </div>
           </div>
-          {/* nBecome a Seller */}
+          {/* Become a Seller */}
           <div className="p-4">
 
             <button
               onClick={() => navigate("/account")}
-              className="mt-6 mb-6 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold text-white transition hover:bg-primary-dark hover:text-white"
+              className="mt-6 mb-6 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold 
+              text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+               hover:bg-primary-dark hover:text-white"
             >
               Become a Seller
             </button>

@@ -19,7 +19,8 @@ function CustomerAccount() {
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {/* Free plan */}
-              <div className="rounded-2xl border border-primary-dark p-6">
+              <div className="rounded-2xl border border-primary-dark p-6
+              transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
                 <h2 className="font-heading text-3xl text-primary-dark">
                   Free
                 </h2>
@@ -36,14 +37,16 @@ function CustomerAccount() {
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("free")}
-                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background"
+                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
+                  transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
                 >
                   Select Free
                 </button>
               </div>
 
               {/* Premium plan */}
-              <div className="rounded-2xl border border-primary-dark p-6">
+              <div className="rounded-2xl border border-primary-dark p-6
+              transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
                 <h2 className="font-heading text-3xl text-primary-dark">
                   Premium
                 </h2>
@@ -64,7 +67,8 @@ function CustomerAccount() {
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("premium")}
-                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background"
+                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
+                  transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
                 >
                   Select Premium
                 </button>
@@ -79,7 +83,9 @@ function CustomerAccount() {
             <button
               type="button"
               onClick={() => setSelectedPlan(null)}
-              className="mb-8 font-semibold text-primary-green"
+              className="mb-8 font-semibold text-primary-green
+              transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+               hover:text-primary-dark"
             >
               ← Back to plans
             </button>
@@ -115,7 +121,8 @@ function CustomerAccount() {
 
               <button
                 type="submit"
-                className="mt-4 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background"
+                className="mt-4 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
+                transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
               >
                 Create {selectedPlan === "free" ? "Free" : "Premium"} Account
               </button>

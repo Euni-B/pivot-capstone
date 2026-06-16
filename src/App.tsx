@@ -24,8 +24,10 @@ function App() {
   // scroll animation library initialization
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 900,
+      easing: "ease-out-cubic",
       once: true,
+      offset: 80,
     });
   }, []);
 

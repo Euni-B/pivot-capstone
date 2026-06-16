@@ -61,7 +61,9 @@ function About() {
             
             <button
             onClick={() => navigate("/contact")}
-            className="mt-8 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold text-white transition hover:bg-primary-dark"
+            className="mt-8 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold 
+            text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+             hover:bg-primary-dark"
           >
             Contact Us
           </button>

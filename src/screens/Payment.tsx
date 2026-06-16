@@ -19,7 +19,8 @@ function Payment() {
           <button
             type="button"
             onClick={() => navigate("/order-confirmation")}
-            className="mt-6 rounded-full bg-primary-green px-6 py-3 font-body font-semibold text-white"
+            className="mt-6 rounded-full bg-primary-green px-6 py-3 font-body font-semibold text-white
+            transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] hover:bg-primary-dark"
           >
             Place Order
           </button>

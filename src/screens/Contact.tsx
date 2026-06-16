@@ -13,7 +13,7 @@ function Contact() {
 
                     {/* Left side: Email form */}
                     <section>
-                        <h1 className="font-heading text-4xl text-primary-green">
+                        <h1 className="font-heading text-4xl text-primary-dark">
                             Email Us
                         </h1>
 
@@ -22,27 +22,30 @@ function Contact() {
                             <input
                                 type="text"
                                 placeholder="Name"
-                                className="rounded-xl border border-primary-green bg-light-background px-4 py-3 font-body"
+                                className="rounded-xl border border-primary-dark bg-light-background px-4 py-3 font-body"
                             />
 
                             {/* Email input */}
                             <input
                                 type="email"
                                 placeholder="Email"
-                                className="rounded-xl border border-primary-green bg-light-background px-4 py-3 font-body"
+                                className="rounded-xl border border-primary-dark bg-light-background px-4 py-3 font-body"
                             />
 
                             {/* Message input */}
                             <textarea
                                 placeholder="Message"
                                 rows={5}
-                                className="rounded-xl border border-primary-green bg-light-background px-4 py-3 font-body"
+                                className="rounded-xl border border-primary-dark bg-light-background 
+                                px-4 py-3 font-body"
                             />
 
                             {/* Send button */}
                             <button
                                 type="submit"
-                                className="w-fit rounded-xl bg-primary-green px-6 py-3 font-body font-semibold text-light-background"
+                                className="w-fit rounded-xl bg-primary-green px-6 py-3 font-body font-semibold
+                                 text-light-background transition-all duration-300 ease-out hover:scale-[1.03] 
+                                 active:scale-[0.98]"
                             >
                                 Send
                             </button>
@@ -51,7 +54,7 @@ function Contact() {
 
                     {/* Right side: Call and hours */}
                     <section className="md:pl-12">
-                        <h2 className="font-heading text-4xl text-primary-green">
+                        <h2 className="font-heading text-4xl text-primary-dark">
                             Call Us
                         </h2>
 
@@ -59,7 +62,7 @@ function Contact() {
                             Phone: +1 (555) 123-4567
                         </p>
 
-                        <h2 className="mt-10 font-heading text-4xl text-primary-green">
+                        <h2 className="mt-10 font-heading text-4xl text-primary-dark">
                             Business Hours
                         </h2>
 
@@ -76,7 +79,8 @@ function Contact() {
 
                     {/* LinkedIn */}
                     <a
-                    className="transition-transform duration-300 hover:scale-110 hover:text-accent-gold"
+                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                     hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -87,7 +91,8 @@ function Contact() {
 
                     {/* Facebook */}
                     <a
-                    className="transition-transform duration-300 hover:scale-110 hover:text-accent-gold"
+                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                     hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -98,7 +103,8 @@ function Contact() {
 
                     {/* Instagram */}
                     <a
-                    className="transition-transform duration-300 hover:scale-110 hover:text-accent-gold"
+                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                     hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -109,7 +115,8 @@ function Contact() {
 
                     {/* TikTok */}
                     <a
-                    className="transition-transform duration-300 hover:scale-110 hover:text-accent-gold"
+                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                     hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"
                         rel="noopener noreferrer"

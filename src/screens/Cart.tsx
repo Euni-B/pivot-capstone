@@ -36,7 +36,8 @@ function Cart() {
 
             <Link
               to="/products"
-              className="mt-6 inline-block rounded-full bg-primary-green px-6 py-3 font-body font-semibold text-white"
+              className="mt-6 inline-block rounded-full bg-primary-green px-6 py-3 font-body font-semibold 
+              text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
             >
               Continue Shopping
             </Link>
@@ -67,7 +68,9 @@ function Cart() {
                     <button
                       type="button"
                       onClick={() => decreaseQuantity(item.id)}
-                      className="rounded-full border border-primary-green px-4 py-2 font-semibold text-primary-dark transition hover:text-primary-green"
+                      className="rounded-full border border-primary-green px-4 py-2 font-semibold
+                       text-primary-dark transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                        hover:text-primary-green"
                     >
                       -
                     </button>
@@ -79,7 +82,9 @@ function Cart() {
                     <button
                       type="button"
                       onClick={() => increaseQuantity(item.id)}
-                      className="rounded-full border border-primary-green px-4 py-2 font-semibold text-primary-dark transition hover:text-primary-green"
+                      className="rounded-full border border-primary-green px-4 py-2 font-semibold
+                       text-primary-dark transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                        hover:text-primary-green"
                     >
                       +
                     </button>
@@ -88,7 +93,9 @@ function Cart() {
                   <button
                     type="button"
                     onClick={() => removeFromCart(item.id)}
-                    className="mt-5 font-body font-semibold text-primary-dark transition hover:text-primary-green"
+                    className="mt-5 font-body font-semibold text-primary-dark
+                     transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                      hover:text-primary-green"
                   >
                     Remove
                   </button>
@@ -114,7 +121,8 @@ function Cart() {
               <button
                 type="button"
                 onClick={() => navigate("/checkout")}
-                className="mt-6 w-full rounded-full bg-primary-green px-6 py-3 font-body font-semibold text-white"
+                className="mt-6 w-full rounded-full bg-primary-green px-6 py-3 font-body font-semibold
+                 text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
               >
                 Checkout
               </button>

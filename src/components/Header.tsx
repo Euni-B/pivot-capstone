@@ -35,13 +35,8 @@ export default function Header() {
         <header className="sticky top-0 z-50 h-24 w-full">
             {/* Glassmorphism container */}
             <div
-                className="
-        mx-auto flex h-full max-w-6xl items-center justify-between px-6
-        border-b border-white/30
-        bg-white/40
-        backdrop-blur-md
-        shadow-sm
-      "
+                className="mx-auto flex h-full max-w-6xl items-center justify-between px-6 border-b border-white/30
+                  bg-white/40 backdrop-blur-md shadow-sm"
             >
                 {/* Logo / Brand */}
                 <NavLink
@@ -62,15 +57,8 @@ export default function Header() {
                         </h1>
 
                         <p
-                            className="
-             
-              font-body
-              text-base
-              tracking-[0.22em]
-              text-primary-dark
-             
-            "
-                        >
+                            className="font-body text-base tracking-[0.22em] text-primary-dark">
+
                             LOCAL GOODS. REAL NEIGHBORS.
                         </p>
                     </div>
@@ -83,20 +71,17 @@ export default function Header() {
                             key={link.name}
                             to={link.path}
                             className={({ isActive }) =>
-                                `
-          transition-colors duration-200
-          ${isActive
-                                    ? "text-primary-green"
-                                    : "text-primary-dark"
-                                }  hover:text-primary-green`}
-                        >
+                                ` transition-colors duration-200 ${isActive ? "text-primary-green"
+                                    : "text-primary-dark"}  hover:text-primary-green`} >
                             {link.name}
                         </NavLink>
                     ))}
-                    <Link
-                        to="/cart"
-                        className="relative font-body font-semibold text-primary-dark transition hover:text-primary-green"
-                    >
+                    <Link to="/cart"
+                        className="relative font-body font-semibold 
+                     text-primary-dark transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] 
+                     hover:text-primary-green" >
+
+
                         <FaShoppingCart className="text-xl" />
 
                         {cartCount > 0 && (
@@ -111,12 +96,7 @@ export default function Header() {
                 <button
                     // Toggle mobile menu open/closed
                     onClick={() => setIsOpen(!isOpen)}
-                    className="
-    text-primary-dark
-    transition-colors duration-200
-    hover:text-primary-green
-    md:hidden
-  "
+                    className=" text-primary-dark transition-colors duration-200 hover:text-primary-green md:hidden "
                     aria-label="Toggle navigation menu"
                 >
                     {/* Show X when menu is open, hamburger when closed */}
@@ -125,21 +105,15 @@ export default function Header() {
             </div>
 
             {/* Mobile Menu */}
-            {/* if mobile menu is open, renders a div with nav links styled for mobile view, with backdrop and border
-    for separation from content */}
+            {/* if mobile menu is open, renders a div with nav links styled for mobile view, with backdrop 
+            and border for separation from content */}
             {isOpen && (
                 <div
-                    className="
-            md:hidden
-            border-b border-white/30
-            bg-white/70
-            backdrop-blur-md
-            px-6 pb-4
-        "
+                    className="  md:hidden border-b border-white/30 bg-white/70 backdrop-blur-md px-6 pb-4 "
                 >
                     <div className="flex flex-col gap-4">
                         {/* renders links variable with styling based on active state and hover state,
-                and closes mobile menu on click */}
+                          and closes mobile menu on click */}
                         {links.map((link) => (
                             <NavLink
                                 key={link.name}
@@ -148,25 +122,23 @@ export default function Header() {
                                 className={({ isActive }) =>
                                     // p=padding y=top and bottom, transition-colors for smooth color change,
                                     // with conditional styling based on active state and hover state
-                                    `py-2 transition-colors duration-200 ${isActive
-                                        ? "text-primary-green"
-                                        : "text-primary-dark"
-                                    } hover:text-primary-green`
-                                }
-                            >
+                                    `py-2 transition-colors duration-200
+                                     ${isActive ? "text-primary-green" : "text-primary-dark"}
+                                    hover:text-primary-green` }>
                                 {link.name}
                             </NavLink>
                         ))}
                         <Link
                             to="/cart"
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center gap-3 rounded-xl px-4 py-3 font-body font-semibold text-primary-dark transition hover:bg-primary-green/10 hover:text-primary-green"
-                        >
+                            className="flex items-center gap-3 rounded-xl px-4 py-3 font-body font-semibold
+                             text-primary-dark transition hover:bg-primary-green/10 hover:text-primary-green" >
                             <div className="relative">
                                 <FaShoppingCart className="text-xl" />
 
                                 {cartCount > 0 && (
-                                    <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded-full bg-accent-gold text-xs font-bold text-primary-dark">
+                                    <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center 
+                                    justify-center rounded-full bg-accent-gold text-xs font-bold text-primary-dark">
                                         {cartCount}
                                     </span>
                                 )}

@@ -28,10 +28,12 @@ function ProductCard({ product }: ProductCardProps) {
   return (
     <article
       onClick={goToProductDetails}
-      className="cursor-pointer rounded-3xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+      className="cursor-pointer rounded-3xl bg-white p-6 shadow-sm transition-all duration-300 ease-out
+      hover:-translate-y-1 hover:shadow-md"
     >
       {/* Product image */}
-      <div className="flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-primary-green/10">
+      <div className="flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-primary-green/10
+      transition-transform duration-500 ease-out hover:scale-105">
         {product.image ? (
           <img
             src={product.image}
@@ -77,7 +79,9 @@ function ProductCard({ product }: ProductCardProps) {
           event.stopPropagation();
           goToProductDetails();
         }}
-        className="mt-5 w-full rounded-full border border-primary-dark/90 px-5 py-3 font-body text-base font-semibold text-primary-dark/90 transition hover:bg-primary-green hover:text-white"
+        className="mt-5 w-full rounded-full border border-primary-dark/90 px-5 py-3 font-body text-base font-semibold
+         text-primary-dark/90 transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+         hover:bg-primary-green hover:text-white"
       >
         View Details
       </button>

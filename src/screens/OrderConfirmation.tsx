@@ -30,14 +30,17 @@ function OrderConfirmation() {
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <Link
             to="/products"
-            className="rounded-full bg-primary-green px-8 py-3 font-body font-semibold text-white"
+            className="rounded-full bg-primary-green px-8 py-3 font-body font-semibold text-white
+            transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] hover:bg-primary-dark"
           >
             Continue Shopping
           </Link>
 
           <Link
             to="/account/customer"
-            className="rounded-full border border-primary-dark px-8 py-3 font-body font-semibold text-primary-dark transition hover:bg-primary-green hover:text-white"
+            className="rounded-full border border-primary-dark px-8 py-3 font-body font-semibold 
+            text-primary-dark transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+             hover:bg-primary-dark hover:text-white"
           >
             View Account
           </Link>
