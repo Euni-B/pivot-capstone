@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 import logo from "../assets/ng-logo.png";
 
 
@@ -17,12 +18,13 @@ export default function Header() {
         // objects in array for nav links, each with name and path properties
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
-        { name: "Products", path: "/products" },
+        { name: "Market", path: "/products" },
         { name: "Account", path: "/account" },
         { name: "Contact", path: "/contact" },
     ];
 
     const { cartItems } = useCart();
+    const { currentUser, logout } = useAuth();
 
     const cartCount = cartItems.reduce(
         (total, item) => total + item.quantity,
@@ -76,6 +78,39 @@ export default function Header() {
                             {link.name}
                         </NavLink>
                     ))}
+
+                    {currentUser && (
+                        <span className="font-body font-semibold text-primary-dark">
+                            Welcome, {currentUser.name}
+                        </span>
+                    )}
+
+                    {currentUser ? (
+                        <>
+                            <span className="font-body font-semibold text-primary-dark">
+                                Welcome, {currentUser.name}
+                            </span>
+
+                            <button
+                                type="button"
+                                onClick={logout}
+                                className="rounded-xl border border-primary-dark px-4 py-2 font-body font-semibold
+                                 text-primary-dark transition hover:bg-primary-green hover:text-light-background"
+                            >
+                                Logout
+                            </button>
+                        </>
+                    ) : (
+                        <Link
+                            to="/account"
+                            className="rounded-xl border border-primary-dark px-4 py-2 font-body font-semibold 
+                            text-primary-dark transition hover:bg-primary-green hover:text-light-background"
+                        >
+                            Login
+                        </Link>
+                    )}
+
+
                     <Link to="/cart"
                         className="relative font-body font-semibold 
                      text-primary-dark transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] 
@@ -85,7 +120,8 @@ export default function Header() {
                         <FaShoppingCart className="text-xl" />
 
                         {cartCount > 0 && (
-                            <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded-full bg-accent-gold text-xs font-bold text-primary-dark">
+                            <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center
+                             rounded-full bg-accent-gold text-xs font-bold text-primary-dark">
                                 {cartCount}
                             </span>
                         )}
@@ -128,6 +164,37 @@ export default function Header() {
                                 {link.name}
                             </NavLink>
                         ))}
+
+                        {currentUser && (
+                            <div className="rounded-xl bg-primary-green/10 p-4">
+                                <p className="font-body font-semibold text-primary-dark">
+                                    Welcome, {currentUser.name}
+                                </p>
+                                {currentUser ? (
+                                    <div className="rounded-xl bg-primary-green/10 p-4">
+                                        <p className="font-body font-semibold text-primary-green">
+                                            Welcome, {currentUser.name}
+                                        </p>
+
+                                        <button
+                                            type="button"
+                                            onClick={logout}
+                                            className="mt-3 rounded-xl border border-primary-green px-4 py-2 font-semibold text-primary-green"
+                                        >
+                                            Logout
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <Link
+                                        to="/account"
+                                        onClick={() => setIsOpen(false)}
+                                        className="rounded-xl border border-primary-green px-4 py-3 text-center font-semibold text-primary-green"
+                                    >
+                                        Login
+                                    </Link>
+                                )}
+                            </div>
+                        )}
                         <Link
                             to="/cart"
                             onClick={() => setIsOpen(false)}

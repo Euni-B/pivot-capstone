@@ -32,7 +32,7 @@ function Products() {
     <main className="mx-auto max-w-6xl px-6 py-12">
       {/* Page Title */}
       <h1 className="font-heading text-center text-4xl text-primary-dark md:text-5xl">
-        Marketplace
+        NeighborGoods Market
       </h1>
 
       {/* Category Tabs */}
@@ -42,9 +42,10 @@ function Products() {
             key={category}
             type="button"
             onClick={() => setSelectedCategory(category)}
-            className={`whitespace-nowrap rounded-full border px-5 py-2 font-body text-sm font-semibold transition-all duration-300 ${selectedCategory === category
+            className={`whitespace-nowrap rounded-full border px-5 py-2 font-body text-sm font-semibold 
+              transition-all duration-300 ${selectedCategory === category
                 ? "border-primary-green bg-primary-green text-light-background"
-                : "border-primary-green text-primary-green hover:bg-primary-green/10"
+                : "border-primary-dark text-primary-dark hover:bg-primary-green/10"
               }`}
           >
             {category}

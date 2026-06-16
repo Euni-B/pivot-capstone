@@ -1,10 +1,39 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function VendorAccount() {
   // This remembers which vendor plan was selected
   const [selectedPlan, setSelectedPlan] = useState<
     "free" | "pro" | "premium" | null
   >(null);
+
+  const [businessName, setBusinessName] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  const { createAccount } = useAuth();
+
+  const handleCreateAccount = (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+
+    if (!selectedPlan) return;
+
+    createAccount({
+      name: contactName,
+      email,
+      password,
+      accountType: "vendor",
+      selectedPlan: selectedPlan,
+    });
+
+    navigate("/account");
+  };
 
   return (
     <main className="bg-light-background text-primary-dark">
@@ -18,7 +47,7 @@ function VendorAccount() {
             </h1>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
-              
+
               {/* Free plan */}
               <div className="rounded-2xl border border-primary-dark p-6
               transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
@@ -51,7 +80,7 @@ function VendorAccount() {
                   Pro
                 </h2>
                 <p className="mt-2 font-body text-lg font-semibold text-primary-dark">
-                    $5.99/month
+                  $5.99/month
                 </p>
 
                 <ul className="mt-4 space-y-2 font-body">
@@ -80,7 +109,7 @@ function VendorAccount() {
                   Premium
                 </h2>
                 <p className="mt-2 font-body text-lg font-semibold text-primary-dark">
-                    $13.99/month
+                  $13.99/month
                 </p>
 
                 <ul className="mt-4 space-y-2 font-body">
@@ -122,18 +151,25 @@ function VendorAccount() {
               {selectedPlan === "free"
                 ? "Free"
                 : selectedPlan === "pro"
-                ? "Pro"
-                : "Premium"}{" "}
+                  ? "Pro"
+                  : "Premium"}{" "}
               Vendor Account
             </h1>
 
-            <form className="mt-8 grid max-w-xl gap-4">
+            <form
+              onSubmit={handleCreateAccount}
+              className="mt-8 grid max-w-xl gap-4"
+            >
               <input
+                value={businessName}
+                onChange={(event) => setBusinessName(event.target.value)}
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Business Name"
               />
 
               <input
+                value={contactName}
+                onChange={(event) => setContactName(event.target.value)}
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Contact Name"
               />
@@ -142,18 +178,24 @@ function VendorAccount() {
                 type="email"
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
               />
 
               <input
                 type="password"
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
 
               <input
                 type="password"
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Confirm Password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
 
               <button

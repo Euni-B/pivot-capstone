@@ -1,22 +1,54 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../context/AuthContext";
 
 function Account() {
+  // Login form state
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Shows an error if login fails
+  const [error, setError] = useState("");
+
+  // Gives access to login and current user
+  const { login, currentUser } = useAuth();
+
+  // Handles login without refreshing the page
+  const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const success = login(email, password);
+
+    if (!success) {
+      setError("Email or password is incorrect.");
+      return;
+    }
+
+    setError("");
+    setEmail("");
+    setPassword("");
+  };
+
   return (
-
     <main className="bg-light-background text-primary-dark">
-
       {/* Login Section */}
-      < section className="mx-auto mb-16 max-w-md" >
-
+      <section className="mx-auto mb-16 max-w-md px-6 pt-16">
         <h2 className="mb-6 text-center font-heading text-4xl text-primary-dark">
           Login
         </h2>
 
-        <form className="flex flex-col gap-4">
+        {currentUser && (
+          <p className="mb-6 rounded-xl border border-primary-dark bg-primary-green/10 px-4 py-3 text-center
+           font-body font-semibold text-primary-dark">
+            Welcome back, {currentUser.name}!
+          </p>
+        )}
 
+        <form onSubmit={handleLogin} className="flex flex-col gap-4">
           {/* Email */}
           <input
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
             type="email"
             placeholder="Email"
             className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
@@ -24,20 +56,26 @@ function Account() {
 
           {/* Password */}
           <input
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
             type="password"
             placeholder="Password"
             className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
           />
 
+          {error && (
+            <p className="font-body text-sm font-semibold text-red-600">
+              {error}
+            </p>
+          )}
+
           {/* Login Button */}
           <button
             type="submit"
-            className="rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
-            transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
+            className="rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
           >
             Login
           </button>
-
         </form>
 
         {/* Register Link */}
@@ -55,12 +93,9 @@ function Account() {
             Register here
           </button>
         </p>
+      </section>
 
-      </section >
-      <section
-        id="account-selection"
-        className="mx-auto  max-w-6xl px-6 py-16"
-      >
+      <section id="account-selection" className="mx-auto max-w-6xl px-6 py-16">
         {/* Page heading */}
         <div className="text-center">
           <h1 className="font-heading text-4xl text-primary-dark md:text-5xl">
@@ -68,16 +103,14 @@ function Account() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl font-body text-lg">
-            Choose how you want to connect with your local  community.
+            Choose how you want to connect with your local community.
           </p>
         </div>
 
         {/* Account choice cards */}
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-
-          {/* Buyer card */}
-          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md
-           transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+          {/* Customer card */}
+          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
             <h2 className="font-heading text-3xl text-primary-dark">
               Shop Local
             </h2>
@@ -89,17 +122,14 @@ function Account() {
 
             <Link
               to="/account/customer"
-              className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body
-               font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
-                hover:bg-primary-dark"
+              className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] hover:bg-primary-dark"
             >
               Create Customer Account
             </Link>
           </section>
 
           {/* Vendor card */}
-          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md
-           transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
             <h2 className="font-heading text-3xl text-primary-dark">
               Sell Local
             </h2>
@@ -111,9 +141,7 @@ function Account() {
 
             <Link
               to="/account/vendor"
-              className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body font-semibold 
-              text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
-               hover:bg-primary-dark"
+              className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] hover:bg-primary-dark"
             >
               Become a Vendor
             </Link>

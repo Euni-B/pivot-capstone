@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function CustomerAccount() {
   // This remembers which customer plan was selected
@@ -6,11 +8,37 @@ function CustomerAccount() {
     null
   );
 
+  // Form input state
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Lets us move back to /account after account creation
+  const navigate = useNavigate();
+
+  // Gives access to the createAccount function from AuthContext
+  const { createAccount } = useAuth();
+
+  // Handles customer account creation
+  const handleCreateAccount = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!selectedPlan) return;
+
+    createAccount({
+      name,
+      email,
+      password,
+      accountType: "customer",
+      selectedPlan: selectedPlan,
+    });
+
+    navigate("/account");
+  };
+
   return (
     <main className="bg-light-background text-primary-dark">
       <section className="mx-auto max-w-6xl px-6 py-16">
-
-        {/* If no plan is selected yet, show the membership cards */}
         {selectedPlan === null && (
           <>
             <h1 className="font-heading text-4xl text-primary-dark">
@@ -18,9 +46,7 @@ function CustomerAccount() {
             </h1>
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {/* Free plan */}
-              <div className="rounded-2xl border border-primary-dark p-6
-              transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+              <div className="rounded-2xl border border-primary-dark p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
                 <h2 className="font-heading text-3xl text-primary-dark">
                   Free
                 </h2>
@@ -37,21 +63,19 @@ function CustomerAccount() {
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("free")}
-                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
-                  transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
+                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
                 >
                   Select Free
                 </button>
               </div>
 
-              {/* Premium plan */}
-              <div className="rounded-2xl border border-primary-dark p-6
-              transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
+              <div className="rounded-2xl border border-primary-dark p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md">
                 <h2 className="font-heading text-3xl text-primary-dark">
                   Premium
                 </h2>
+
                 <p className="mt-2 font-body text-lg font-semibold text-primary-dark">
-                    $5.99/month
+                  $5.99/month
                 </p>
 
                 <ul className="mt-4 space-y-2 font-body">
@@ -67,8 +91,7 @@ function CustomerAccount() {
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("premium")}
-                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
-                  transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
+                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
                 >
                   Select Premium
                 </button>
@@ -77,15 +100,12 @@ function CustomerAccount() {
           </>
         )}
 
-        {/* If a plan is selected, show the create account form */}
         {selectedPlan !== null && (
           <>
             <button
               type="button"
               onClick={() => setSelectedPlan(null)}
-              className="mb-8 font-semibold text-primary-green
-              transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
-               hover:text-primary-dark"
+              className="mb-8 font-semibold text-primary-green transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] hover:text-primary-dark"
             >
               ← Back to plans
             </button>
@@ -95,34 +115,33 @@ function CustomerAccount() {
               Account
             </h1>
 
-            <form className="mt-8 grid max-w-xl gap-4">
+            <form onSubmit={handleCreateAccount} className="mt-8 grid max-w-xl gap-4">
               <input
+                value={name}
+                onChange={(event) => setName(event.target.value)}
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Full Name"
               />
 
               <input
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 type="email"
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Email"
               />
 
               <input
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
                 type="password"
                 className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Password"
               />
 
-              <input
-                type="password"
-                className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
-                placeholder="Confirm Password"
-              />
-
               <button
                 type="submit"
-                className="mt-4 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background
-                transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
+                className="mt-4 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]"
               >
                 Create {selectedPlan === "free" ? "Free" : "Premium"} Account
               </button>
