@@ -32,7 +32,7 @@ function Account() {
   return (
     <main className="bg-light-background text-primary-dark">
       {/* Login Section */}
-      <section className="mx-auto mb-16 max-w-md px-6 pt-16">
+      <section className="mx-auto mb-16 pt-16 max-w-md px-6 ">
         <h2 className="mb-6 text-center font-heading text-4xl text-primary-dark">
           Login
         </h2>
