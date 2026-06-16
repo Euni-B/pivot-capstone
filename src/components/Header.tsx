@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useCart } from "../context/CartContext";
 import logo from "../assets/ng-logo.png";
 
 
@@ -18,6 +21,13 @@ export default function Header() {
         { name: "Account", path: "/account" },
         { name: "Contact", path: "/contact" },
     ];
+
+    const { cartItems } = useCart();
+
+    const cartCount = cartItems.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
 
     // display on page 
     return (
@@ -78,14 +88,23 @@ export default function Header() {
           ${isActive
                                     ? "text-primary-green"
                                     : "text-primary-dark"
-                                }
-          hover:text-primary-green
-        `
-                            }
+                                }  hover:text-primary-green` }
                         >
                             {link.name}
                         </NavLink>
                     ))}
+                    <Link
+                        to="/cart"
+                        className="relative font-body font-semibold text-primary-dark transition hover:text-primary-green"
+                    >
+                        <FaShoppingCart className="text-xl" />
+
+                        {cartCount > 0 && (
+                            <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded-full bg-accent-gold text-xs font-bold text-primary-dark">
+                                {cartCount}
+                            </span>
+                        )}
+                    </Link>
                 </nav>
 
                 {/* Mobile Menu Button */}
