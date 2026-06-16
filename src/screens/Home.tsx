@@ -57,10 +57,18 @@ function Home() {
               className="rounded-3xl bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
             >
               {/* Placeholder image */}
-              <div className="flex h-40 items-center justify-center rounded-2xl bg-primary-green/10">
-                <p className="font-body text-base text-primary-dark/60">
-                  Image Coming Soon
-                </p>
+              <div className="flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-primary-green/10">
+                {product.image ? (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <p className="font-body text-base text-primary-dark/60">
+                    Image Coming Soon
+                  </p>
+                )}
               </div>
 
               {/* Category */}

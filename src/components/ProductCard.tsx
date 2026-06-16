@@ -45,7 +45,7 @@ function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      <p className="mt-4 font-body text-sm font-semibold text-primary-green">
+      <p className="mt-4 font-body text-sm font-semibold text-primary-dark/90">
         {product.category}
       </p>
 
@@ -53,19 +53,19 @@ function ProductCard({ product }: ProductCardProps) {
         {product.name}
       </h2>
 
-      <p className="mt-2 font-body text-base leading-relaxed text-primary-dark/70">
+      <p className="mt-2 font-body text-base leading-relaxed text-primary-dark/90">
         {product.description}
       </p>
 
-      <p className="mt-3 font-body text-base text-primary-dark/70">
+      <p className="mt-3 font-body text-base text-primary-dark/90">
         Seller: {product.seller}
       </p>
 
-      <p className="mt-2 font-body text-base text-accent-gold">
+      <p className="mt-2 font-body text-base text-primary-dark/90">
         ★ {product.rating} ({product.reviewCount} reviews)
       </p>
 
-      <p className="mt-3 font-body text-lg font-bold text-primary-green">
+      <p className="mt-3 font-body text-lg font-bold text-primary-dark/90">
         ${product.price.toFixed(2)}
       </p>
 
@@ -77,7 +77,7 @@ function ProductCard({ product }: ProductCardProps) {
           event.stopPropagation();
           goToProductDetails();
         }}
-        className="mt-5 w-full rounded-full border border-primary-green px-5 py-3 font-body text-base font-semibold text-primary-green transition hover:bg-primary-green hover:text-white"
+        className="mt-5 w-full rounded-full border border-primary-dark/90 px-5 py-3 font-body text-base font-semibold text-primary-dark/90 transition hover:bg-primary-green hover:text-white"
       >
         View Details
       </button>
