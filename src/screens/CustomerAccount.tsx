@@ -13,14 +13,14 @@ function CustomerAccount() {
         {/* If no plan is selected yet, show the membership cards */}
         {selectedPlan === null && (
           <>
-            <h1 className="font-heading text-4xl text-primary-green">
+            <h1 className="font-heading text-4xl text-primary-dark">
               Choose Your Customer Membership
             </h1>
 
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {/* Free plan */}
-              <div className="rounded-2xl border border-primary-green p-6">
-                <h2 className="font-heading text-3xl text-primary-green">
+              <div className="rounded-2xl border border-primary-dark p-6">
+                <h2 className="font-heading text-3xl text-primary-dark">
                   Free
                 </h2>
 
@@ -43,11 +43,11 @@ function CustomerAccount() {
               </div>
 
               {/* Premium plan */}
-              <div className="rounded-2xl border border-primary-green p-6">
-                <h2 className="font-heading text-3xl text-primary-green">
+              <div className="rounded-2xl border border-primary-dark p-6">
+                <h2 className="font-heading text-3xl text-primary-dark">
                   Premium
                 </h2>
-                <p className="mt-2 font-body text-lg font-semibold text-accent-gold">
+                <p className="mt-2 font-body text-lg font-semibold text-primary-dark">
                     $5.99/month
                 </p>
 
@@ -64,7 +64,7 @@ function CustomerAccount() {
                 <button
                   type="button"
                   onClick={() => setSelectedPlan("premium")}
-                  className="mt-6 rounded-xl bg-accent-gold px-6 py-3 font-semibold text-primary-dark"
+                  className="mt-6 rounded-xl bg-primary-green px-6 py-3 font-semibold text-light-background"
                 >
                   Select Premium
                 </button>
@@ -84,32 +84,32 @@ function CustomerAccount() {
               ← Back to plans
             </button>
 
-            <h1 className="font-heading text-4xl text-primary-green">
+            <h1 className="font-heading text-4xl text-primary-dark">
               Create {selectedPlan === "free" ? "Free" : "Premium"} Customer
               Account
             </h1>
 
             <form className="mt-8 grid max-w-xl gap-4">
               <input
-                className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+                className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Full Name"
               />
 
               <input
                 type="email"
-                className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+                className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Email"
               />
 
               <input
                 type="password"
-                className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+                className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Password"
               />
 
               <input
                 type="password"
-                className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+                className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
                 placeholder="Confirm Password"
               />
 

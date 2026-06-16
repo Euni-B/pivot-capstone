@@ -26,7 +26,7 @@ function Cart() {
   return (
     <main className="bg-light-background text-primary-dark">
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <h1 className="font-heading text-4xl text-primary-green">
+        <h1 className="font-heading text-4xl text-primary-dark">
           Your Cart
         </h1>
 
@@ -58,7 +58,7 @@ function Cart() {
                     Seller: {item.seller}
                   </p>
 
-                  <p className="mt-3 font-bold text-primary-green">
+                  <p className="mt-3 font-bold text-primary-dark">
                     ${item.price.toFixed(2)}
                   </p>
 
@@ -67,7 +67,7 @@ function Cart() {
                     <button
                       type="button"
                       onClick={() => decreaseQuantity(item.id)}
-                      className="rounded-full border border-primary-green px-4 py-2 font-semibold text-primary-green"
+                      className="rounded-full border border-primary-green px-4 py-2 font-semibold text-primary-dark transition hover:text-primary-green"
                     >
                       -
                     </button>
@@ -79,7 +79,7 @@ function Cart() {
                     <button
                       type="button"
                       onClick={() => increaseQuantity(item.id)}
-                      className="rounded-full border border-primary-green px-4 py-2 font-semibold text-primary-green"
+                      className="rounded-full border border-primary-green px-4 py-2 font-semibold text-primary-dark transition hover:text-primary-green"
                     >
                       +
                     </button>
@@ -88,7 +88,7 @@ function Cart() {
                   <button
                     type="button"
                     onClick={() => removeFromCart(item.id)}
-                    className="mt-5 font-body font-semibold text-accent-gold"
+                    className="mt-5 font-body font-semibold text-primary-dark transition hover:text-primary-green"
                   >
                     Remove
                   </button>
@@ -98,7 +98,7 @@ function Cart() {
 
             {/* Order summary */}
             <aside className="h-fit rounded-3xl bg-white p-6 shadow-sm">
-              <h2 className="font-heading text-3xl text-primary-green">
+              <h2 className="font-heading text-3xl text-primary-dark">
                 Order Summary
               </h2>
 
@@ -106,7 +106,7 @@ function Cart() {
                 <p>Subtotal: ${subtotal.toFixed(2)}</p>
                 <p>Estimated Taxes: ${taxes.toFixed(2)}</p>
 
-                <p className="border-t border-primary-green/30 pt-4 text-xl font-bold">
+                <p className="border-t border-primary-dark/30 pt-4 text-xl font-bold">
                   Total: ${total.toFixed(2)}
                 </p>
               </div>

@@ -25,7 +25,7 @@ function ProductDetails() {
 
         <Link
           to="/products"
-          className="mt-6 inline-block rounded-full bg-primary-green px-6 py-3 font-body text-base font-semibold text-white"
+          className="mt-6 inline-block rounded-full bg-primary-green px-6 py-3 font-body text-primary-dark font-semibold text-white"
         >
           Back to Marketplace
         </Link>
@@ -38,7 +38,7 @@ function ProductDetails() {
       {/* Back Link */}
       <Link
         to="/products"
-        className="font-body text-base font-semibold text-primary-green"
+        className="font-body text-base font-semibold text-primary-dark transition hover:text-primary-green"
       >
         ← Back to Marketplace
       </Link>
@@ -62,7 +62,7 @@ function ProductDetails() {
 
       {/* Product Info */}
       <div className="rounded-3xl bg-white p-8 shadow-sm">
-        <p className="font-body text-sm font-semibold text-primary-green">
+        <p className="font-body text-sm font-semibold text-primary-dark">
           {product.category}
         </p>
 
@@ -78,11 +78,11 @@ function ProductDetails() {
           Seller: {product.seller}
         </p>
 
-        <p className="mt-3 font-body text-base text-accent-gold">
+        <p className="mt-3 font-body text-base text-primary-dark/75">
           ★ {product.rating} ({product.reviewCount} reviews)
         </p>
 
-        <p className="mt-6 font-body text-3xl font-bold text-primary-green">
+        <p className="mt-6 font-body text-3xl font-bold text-primary-dark">
           ${product.price.toFixed(2)}
         </p>
 

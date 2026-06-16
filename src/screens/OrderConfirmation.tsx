@@ -5,7 +5,7 @@ function OrderConfirmation() {
     <main className="bg-light-background text-primary-dark">
       <section className="mx-auto max-w-4xl px-6 py-16 text-center">
 
-        <h1 className="font-heading text-5xl text-primary-green">
+        <h1 className="font-heading text-5xl text-primary-dark">
           Order Confirmed!
         </h1>
 
@@ -15,7 +15,7 @@ function OrderConfirmation() {
         </p>
 
         <div className="mt-10 rounded-3xl bg-white p-8 shadow-sm">
-          <h2 className="font-heading text-3xl text-primary-green">
+          <h2 className="font-heading text-3xl text-primary-dark">
             What's Next?
           </h2>
 
@@ -37,7 +37,7 @@ function OrderConfirmation() {
 
           <Link
             to="/account/customer"
-            className="rounded-full border border-primary-green px-8 py-3 font-body font-semibold text-primary-green"
+            className="rounded-full border border-primary-dark px-8 py-3 font-body font-semibold text-primary-dark transition hover:bg-primary-green hover:text-white"
           >
             View Account
           </Link>

@@ -72,7 +72,7 @@ function Home() {
               </div>
 
               {/* Category */}
-              <p className="mt-4 font-body text-sm font-semibold text-primary-green">
+              <p className="mt-4 font-body text-sm font-semibold text-primary-dark">
                 {product.category}
               </p>
 
@@ -82,7 +82,7 @@ function Home() {
               </h3>
 
               {/* Price */}
-              <p className="mt-2 font-body text-lg font-bold text-primary-green">
+              <p className="mt-2 font-body text-lg font-bold text-primary-dark">
                 ${product.price.toFixed(2)}
               </p>
             </Link>
@@ -112,11 +112,11 @@ function Home() {
                 {"★".repeat(reviews[currentReview].rating)}
               </p>
 
-              <p className="mt-6 font-body text-lg italic leading-relaxed text-primary-dark/75">
+              <p className="mt-6 font-body text-lg italic leading-relaxed text-primary-dark">
                 "{reviews[currentReview].review}"
               </p>
 
-              <p className="mt-6 font-body text-base font-semibold text-primary-green">
+              <p className="mt-6 font-body text-base font-semibold text-primary-dark">
                 — {reviews[currentReview].customer}
               </p>
             </div>
@@ -126,7 +126,7 @@ function Home() {
 
             <button
               onClick={() => navigate("/account")}
-              className="mt-6 mb-6 rounded-full bg-accent-gold px-8 py-4 font-body text-base font-semibold text-primary-dark transition hover:bg-primary-green hover:text-white"
+              className="mt-6 mb-6 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold text-white transition hover:bg-primary-dark hover:text-white"
             >
               Become a Seller
             </button>

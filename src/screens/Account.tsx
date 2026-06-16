@@ -1,4 +1,3 @@
-// Link lets the buttons move users to the correct account form
 import { Link } from "react-router-dom";
 
 
@@ -10,7 +9,7 @@ function Account() {
       {/* Login Section */}
       < section className="mx-auto mb-16 max-w-md" >
 
-        <h2 className="mb-6 text-center font-heading text-4xl text-primary-green">
+        <h2 className="mb-6 text-center font-heading text-4xl text-primary-dark">
           Login
         </h2>
 
@@ -20,14 +19,14 @@ function Account() {
           <input
             type="email"
             placeholder="Email"
-            className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+            className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
           />
 
           {/* Password */}
           <input
             type="password"
             placeholder="Password"
-            className="rounded-xl border border-primary-green bg-light-background px-4 py-3"
+            className="rounded-xl border border-primary-dark bg-light-background px-4 py-3"
           />
 
           {/* Login Button */}
@@ -50,28 +49,20 @@ function Account() {
                 .getElementById("account-selection")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="font-semibold text-accent-gold hover:underline"
+            className="font-semibold text-primary-green hover:underline"
           >
             Register here
           </button>
         </p>
 
       </section >
-
-
-
-
-
       <section
-       id="account-selection"
-       className="mx-auto  max-w-6xl px-6 py-16"
-       >
-
-
-
+        id="account-selection"
+        className="mx-auto  max-w-6xl px-6 py-16"
+      >
         {/* Page heading */}
         <div className="text-center">
-          <h1 className="font-heading text-4xl text-primary-green md:text-5xl">
+          <h1 className="font-heading text-4xl text-primary-dark md:text-5xl">
             Join NeighborGoods
           </h1>
 
@@ -84,8 +75,8 @@ function Account() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
 
           {/* Buyer card */}
-          <section className="rounded-3xl border border-primary-green bg-light-background p-8 shadow-md">
-            <h2 className="font-heading text-3xl text-primary-green">
+          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md">
+            <h2 className="font-heading text-3xl text-primary-dark">
               Shop Local
             </h2>
 
@@ -96,15 +87,16 @@ function Account() {
 
             <Link
               to="/account/customer"
-              className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body font-semibold text-light-background transition-transform duration-300 hover:scale-105"
+              className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body
+               font-semibold text-light-background transition-transform duration-300 hover:scale-105"
             >
               Create Customer Account
             </Link>
           </section>
 
           {/* Vendor card */}
-          <section className="rounded-3xl border border-primary-green bg-light-background p-8 shadow-md">
-            <h2 className="font-heading text-3xl text-primary-green">
+          <section className="rounded-3xl border border-primary-dark bg-light-background p-8 shadow-md">
+            <h2 className="font-heading text-3xl text-primary-dark">
               Sell Local
             </h2>
 
@@ -115,7 +107,8 @@ function Account() {
 
             <Link
               to="/account/vendor"
-              className="mt-6 inline-block rounded-xl bg-accent-gold px-6 py-3 font-body font-semibold text-primary-dark transition-transform duration-300 hover:scale-105"
+              className="mt-6 inline-block rounded-xl bg-primary-green px-6 py-3 font-body font-semibold 
+              text-light-background transition-transform duration-300 hover:scale-105"
             >
               Become a Vendor
             </Link>
