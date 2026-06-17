@@ -73,7 +73,7 @@ export default function Header() {
                             key={link.name}
                             to={link.path}
                             className={({ isActive }) =>
-                                ` transition-colors duration-200 ${isActive ? "text-primary-green"
+                                ` transition-colors duration-200 ${isActive ? "text-primary-green border-b-2 border-primary-green"
                                     : "text-primary-dark"}  hover:text-primary-green`} >
                             {link.name}
                         </NavLink>

@@ -17,6 +17,7 @@ interface CartContextType {
   increaseQuantity: (id: number) => void;
   decreaseQuantity: (id: number) => void;
   removeFromCart: (id: number) => void;
+  clearCart: () => void;
 }
 
 // Creates the cart context
@@ -25,6 +26,11 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: React.ReactNode }) {
   // Stores all cart items
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  // Clears the whole cart after checkout
+const clearCart = () => {
+  setCartItems([]);
+};
 
   // Adds an item to the cart
   const addToCart = (item: Omit<CartItem, "quantity">) => {
@@ -80,6 +86,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         increaseQuantity,
         decreaseQuantity,
         removeFromCart,
+        clearCart,
       }}
     >
       {children}

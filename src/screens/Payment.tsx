@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 function Payment() {
   const navigate = useNavigate();
+  const { clearCart } = useCart();
+
+  // Clears the cart and goes to order confirmation
 
   return (
     <main className="bg-light-background text-primary-dark">
@@ -18,7 +22,8 @@ function Payment() {
 
           <button
             type="button"
-            onClick={() => navigate("/order-confirmation")}
+            onClick={() =>
+              { clearCart(); navigate("/order-confirmation"); }}
             className="mt-6 rounded-full bg-primary-green px-6 py-3 font-body font-semibold text-white
             transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98] hover:bg-primary-dark"
           >
