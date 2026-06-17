@@ -1,13 +1,21 @@
 import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { products } from "../data/products";
 import { reviews } from "../data/reviews";
+// import ProductCard from "../components/ProductCard";
 
 function Home() {
   const navigate = useNavigate();
   const [currentReview, setCurrentReview] = useState(0);
-  const featuredProducts = products.slice(0, 3);
+  
+
+  const featuredProducts = useMemo(() => {
+    const shuffled = [...products].sort(() => Math.random() - 0.5);
+
+    return shuffled.slice(0, 3);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -56,8 +64,8 @@ function Home() {
             <Link
               key={product.id}
               to={`/products/${product.id}`}
-              className="rounded-3xl bg-white p-5 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1
-               hover:shadow-md "
+              className="group rounded-3xl bg-white p-5
+               shadow-sm transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl"
             >
               {/* Product image */}
               <div className="flex h-40 items-center justify-center overflow-hidden rounded-2xl bg-primary-green/10
@@ -77,7 +85,7 @@ function Home() {
 
               {/* Category */}
               <p className="mt-4 font-body text-sm font-semibold text-primary-dark">
-                {product.category}
+                {product.seller}
               </p>
 
               {/* Product Name */}
