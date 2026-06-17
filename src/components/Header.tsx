@@ -79,11 +79,11 @@ export default function Header() {
                         </NavLink>
                     ))}
 
-                    {currentUser && (
+                    {/* {currentUser && (
                         <span className="font-body font-semibold text-primary-dark">
                             Welcome, {currentUser.name}
                         </span>
-                    )}
+                    )} */}
 
                     {currentUser ? (
                         <>
