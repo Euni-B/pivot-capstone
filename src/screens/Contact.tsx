@@ -1,7 +1,23 @@
 // Import social media icons from react-icons
 import { FaLinkedin, FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
+    const navigate = useNavigate();
+    const handleSubmit = (
+        event: React.FormEvent<HTMLFormElement>
+    ) => {
+        event.preventDefault();
+
+        // Clear fields
+        // setInput("");
+        // input("");
+        // textArea("");
+
+        // Go to success page
+        navigate("/contact-success");
+    };
+
     return (
         // Main contact page wrapper
         <main className="bg-light-background text-primary-dark">
@@ -17,7 +33,8 @@ function Contact() {
                             Email Us
                         </h1>
 
-                        <form className="mt-6 flex flex-col gap-4">
+                        <form className="mt-6 flex flex-col gap-4"
+                            onSubmit={handleSubmit}>
                             {/* Name input */}
                             <input
                                 type="text"
@@ -79,7 +96,7 @@ function Contact() {
 
                     {/* LinkedIn */}
                     <a
-                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                        className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
                      hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"
@@ -91,7 +108,7 @@ function Contact() {
 
                     {/* Facebook */}
                     <a
-                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                        className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
                      hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"
@@ -103,7 +120,7 @@ function Contact() {
 
                     {/* Instagram */}
                     <a
-                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                        className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
                      hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"
@@ -115,7 +132,7 @@ function Contact() {
 
                     {/* TikTok */}
                     <a
-                    className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
+                        className="transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
                      hover:text-primary-dark"
                         href="https://www.linkedin.com/in/eunice-bontreger-030953124/"
                         target="_blank"

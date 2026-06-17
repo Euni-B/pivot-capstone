@@ -13,6 +13,7 @@ import VendorAccount from "./screens/VendorAccount";
 import Checkout from "./screens/Checkout";
 import Payment from "./screens/Payment";
 import Cart from "./screens/Cart";
+import ContactSuccess from "./screens/ContactSuccess";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import OrderConfirmation from './screens/OrderConfirmation';
@@ -52,6 +53,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/order-confirmation" element={<OrderConfirmation />} />
+          <Route path="/contact-success" element={<ContactSuccess />} />
         </Routes>
       </main>
 
