@@ -7,16 +7,7 @@ function About() {
     <main className="bg-light-background text-primary-dark">
       {/* Main About page container */}
       <section className="relative mx-auto max-w-6xl px-6 py-20">
-        <div className="absolute left-0 top-10 h-[800px] w-full rounded-[2rem] overflow-hidden">
-          <img
-            src="https://media.istockphoto.com/photos/portrait-of-successful-business-team-standing-in-an-office-picture-id537820095?k=20&m=537820095&s=612x612&w=0&h=A86nzlp_8WdvMOXjXvB2KximoLb3HnEG5juAPPtV0H4="
-            alt="NeighborGoods community"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
 
-          {/* Faded overlay */}
-          <div className="absolute inset-0 bg-light-background/80" />
-        </div>
 
         {/* Page intro */}
         <section className="ml-6 grid gap-16 pt-5 md:grid-cols-2 md:items-start">
@@ -45,68 +36,71 @@ function About() {
             </p>
           </div>
 
-          {/* Our Why */}
-          <div data-aos="fade-left" className="md:mt-10 md:ml-6">
+
+          <div>
             <h2 className="font-heading text-4xl leading-tight md:text-5xl">
               Our Why
             </h2>
-
 
             <p className="font-body text-base leading-relaxed text-primary-dark/80 md:text-lg">
               We believe local sellers deserve a simple way to be discovered,
               and shoppers deserve easier access to fresh, handmade, and
               community-made products.
             </p>
-
-            
+          
             <button
-            onClick={() => navigate("/contact")}
-            className="mt-8 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold 
+              onClick={() => navigate("/contact")}
+              className="mt-8 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold 
             text-white transition-all duration-300 ease-out hover:scale-[1.03] active:scale-[0.98]
              hover:bg-primary-dark"
-          >
-            Contact Us
-          </button>
+            >
+              Contact Us
+            </button>
           </div>
 
         </section>
 
-
-
+        {/* Community Image */}
+        <div
+          data-aos="fade-up"
+          className="mx-auto my-16 flex justify-center"
+        >
+          <img
+            src="https://media.istockphoto.com/photos/portrait-of-successful-business-team-standing-in-an-office-picture-id537820095?k=20&m=537820095&s=612x612&w=0&h=A86nzlp_8WdvMOXjXvB2KximoLb3HnEG5juAPPtV0H4="
+            alt="NeighborGoods community"
+            className="w-full max-w-4xl rounded-[2rem] object-cover shadow-lg"
+          />
+        </div>
 
         {/* Story content */}
-        <div className="relative z-10 mt-16 mx-auto flex min-h-[420px] max-w-3xl flex-col items-center
+
+      </section>
+      {/* Story content */}
+      <div className="relative z-10 mt-16 mx-auto flex min-h-[420px] max-w-3xl flex-col items-center
          justify-center px-6 text-center">
 
-          <h2 className="font-heading text-4xl leading-tight md:text-5xl">
-            Our Story
-          </h2>
+        <h2 className="font-heading text-4xl leading-tight md:text-5xl">
+          Our Story
+        </h2>
+        <p className="m-6 mb-16 font-body text-base leading-relaxed text-primary-dark/75 md:text-lg">
+          Growing up on a small farm, I saw firsthand how difficult it can be for local growers
+          and makers to reach new customers. Producing quality goods is only part of the challenge.
+          Finding time, resources, and knowledge to market those goods is often an entirely different job.
 
+          Many small businesses create incredible products but struggle to gain visibility beyond their
+          immediate community. After leaving farm life, I experienced the problem from the other side.
 
+          I wanted to support local growers, artisans, and producers, but finding them wasn't always easy.
+          Many of the best
+          products were hidden behind word of mouth, roadside signs, or social media pages that were
+          difficult to discover.
 
-          <p className="mt-5 font-body text-base leading-relaxed text-primary-dark/75 md:text-lg">
-            Growing up on a small farm, I saw firsthand how difficult it can be for local growers
-            and makers to reach new customers. Producing quality goods is only part of the challenge.
-            Finding time, resources, and knowledge to market those goods is often an entirely different job.
+          Communities are filled with talented people creating valuable goods. The challenge is helping
+          buyers and sellers
+          find each other.
+        </p>
+      </div>
 
-            Many small businesses create incredible products but struggle to gain visibility beyond their
-            immediate community. After leaving farm life, I experienced the problem from the other side.
-
-            I wanted to support local growers, artisans, and producers, but finding them wasn't always easy.
-            Many of the best
-            products were hidden behind word of mouth, roadside signs, or social media pages that were
-            difficult to discover.
-
-            Communities are filled with talented people creating valuable goods. The challenge is helping
-            buyers and sellers
-            find each other.
-          </p>
-
-        
-        </div>
-      </section>
-
-    
     </main >
   );
 }
