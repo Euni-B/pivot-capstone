@@ -1,22 +1,25 @@
 import { useNavigate } from "react-router-dom";
 
 function About() {
+
+  // useNavigate is a React Router hook.
+  // This variable lets the button route users to another page programmatically.
   const navigate = useNavigate();
 
   return (
     <main className="bg-light-background text-primary-dark">
-      {/* Main About page container */}
+
+      {/* Main page wrapper for spacing, max width, and relative positioning */}
       <section className="relative mx-auto max-w-6xl px-6 py-20">
 
-
-        {/* Page intro */}
+        {/* Responsive grid: one column on mobile, two columns on medium screens and larger */}
         <section className="ml-6 grid gap-16 pt-5 md:grid-cols-2 md:items-start">
-          {/* Mission / Bio */}
+
+          {/* data-aos applies a scroll animation from the AOS library */}
           <div data-aos="fade-right" className="md:-ml-6">
             <h1 className="font-heading text-4xl leading-tight md:text-5xl">
               Our Mission
             </h1>
-
 
             <p className="font-body text-base leading-relaxed text-primary-dark/80 md:text-lg">
               NeighborGoods was created to make community trade more accessible.
@@ -36,7 +39,6 @@ function About() {
             </p>
           </div>
 
-
           <div>
             <h2 className="font-heading text-4xl leading-tight md:text-5xl">
               Our Why
@@ -47,7 +49,8 @@ function About() {
               and shoppers deserve easier access to fresh, handmade, and
               community-made products.
             </p>
-          
+
+            {/* onClick event handler uses navigate() to send users to the Contact page */}
             <button
               onClick={() => navigate("/contact")}
               className="mt-8 rounded-full bg-primary-green px-8 py-4 font-body text-base font-semibold 
@@ -60,7 +63,7 @@ function About() {
 
         </section>
 
-        {/* Community Image */}
+        {/* Standalone community image centered below the intro text */}
         <div
           data-aos="fade-up"
           className="mx-auto my-16 flex justify-center"
@@ -75,13 +78,15 @@ function About() {
         {/* Story content */}
 
       </section>
-      {/* Story content */}
+
+      {/* z-10 places this section above lower z-index elements if layering is used elsewhere */}
       <div className="relative z-10 mt-16 mx-auto flex min-h-[420px] max-w-3xl flex-col items-center
          justify-center px-6 text-center">
 
         <h2 className="font-heading text-4xl leading-tight md:text-5xl">
           Our Story
         </h2>
+
         <p className="m-6 mb-16 font-body text-base leading-relaxed text-primary-dark/75 md:text-lg">
           Growing up on a small farm, I saw firsthand how difficult it can be for local growers
           and makers to reach new customers. Producing quality goods is only part of the challenge.

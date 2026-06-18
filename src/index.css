@@ -2,6 +2,13 @@
 
 @import "tailwindcss";
 
+/* 
+  Custom design system for the entire NeighborGoods project.
+
+  These variables define the official color palette and font choices.
+  Once defined here, they can be reused throughout the application
+  instead of repeatedly typing color codes and font names.
+*/
 @theme {
   --color-primary-dark: #1F2937;
   --color-primary-green: #2E6F57;
@@ -12,12 +19,24 @@
   --font-body: "Manrope", sans-serif;
 }
 
+/* 
+  Apply border-box sizing to every element.
+
+  This makes width and height calculations more predictable by
+  including padding and borders inside an element's total size.
+*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* 
+  Establish the foundation for the application's layout.
+
+  Setting these elements to 100% width and height helps ensure
+  the React application can properly fill the browser window.
+*/
 html,
 body,
 #root {
@@ -26,6 +45,12 @@ body,
   margin: 0;
 }
 
+/* 
+  Global styles for the entire website.
+
+  These settings become the default appearance unless a component
+  overrides them with its own styles.
+*/
 body {
   background-color: #F7F8FA;
   color: #1F2937;
@@ -35,6 +60,14 @@ body {
   overflow-x: hidden;
 }
 
+/* 
+  Default image behavior.
+
+  display: block removes unwanted spacing that images can have.
+
+  max-width: 100% prevents images from becoming wider than
+  their container, helping keep layouts responsive.
+*/
 img {
   display: block;
   max-width: 100%;

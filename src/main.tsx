@@ -15,9 +15,10 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* navigates amongst different pages  */}
     <BrowserRouter>
-    {/* component that contains everything to render       */}
+  
     <CartProvider>
       <AuthProvider>
+          {/* component that contains everything to render       */}
       <App />
       </AuthProvider>
     </CartProvider>
